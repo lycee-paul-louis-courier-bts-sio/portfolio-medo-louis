@@ -1,87 +1,67 @@
-# Portfolio - \<NOM Prenom\>
-
-![Bannière BTS SIO](https://firetoak.github.io/bts-sio_hebergement-portfolio-slam/assets/banniere_bts-sio.png)
-
----
-
-## Contexte
-
-En tant qu'étudiant en BTS SIO (Services Informatiques aux Organisations), le portfolio professionnel est l'élément central de votre évaluation finale. Il témoigne des compétences techniques et méthodologiques acquises au cours de votre formation.
-
-Ce dépôt Git possède un double rôle fondamental dans une approche d'ingénierie moderne :
-
-1.  **Le Versioning :** Il assure la sauvegarde, la traçabilité et l'historique complet du code source de votre site web.
-2.  **Le Déploiement Continu :** Il est le point d'entrée de l'infrastructure d'hébergement du lycée. Chaque modification validée sur ce dépôt déclenche une mise à jour automatisée de votre site en production sur le serveur web privé (VPS), sans aucune intervention manuelle de votre part.
+# Portfolio de Test — BTS SIO SLAM
+## Vérification serveur Apache + PHP
 
 ---
 
-## Utiliser le dépôt
+## 📁 Structure des fichiers
 
-1.  **Cloner le dépôt sur votre machine locale.** Récupérez le code source pour commencer à travailler sur votre ordinateur.
-
-```bash
-git clone https://github.com/lycee-paul-louis-courier-bts-sio/portfolio-<nom-prenom>.git
 ```
-
-2.  **Créer une branche de développement.** Il est déconseillé de travailler directement sur la branche de production. Créez une branche isolée pour vos tests.
-
-```bash
-git branch -c dev-nouvelle-fonctionnalite
-```
-
-3.  **Sauvegarder et valider vos modifications (Commit).** Une fois vos fichiers HTML/CSS/PHP modifiés, ajoutez-les à l'historique de Git.
-
-```bash
-git add .
-git commit -m "feat: ajout de la page de présentation des projets"
-```
-
-4.  **Pousser et déployer en production.** Basculez sur la branche principale, fusionnez votre travail, et envoyez-le sur GitHub. Cette action déclenchera la mise à jour de votre site en ligne.
-
-```bash
-git switch main
-git merge dev-nouvelle-fonctionnalite
-git push origin main
+portfolio-test/
+├── index.php       → Page principale (variables, boucles, fonctions, formulaire POST)
+├── utils.php       → Tests avancés (sessions, cookies, regex, JSON, fichiers)
+├── upload.php      → Test d'upload de fichiers ($_FILES, sécurité)
+├── api.php         → Endpoint API REST JSON (routeur PHP natif)
+├── api_doc.php     → Documentation + testeur interactif de l'API
+├── .htaccess       → Configuration Apache (sécurité, compression, cache)
+└── README.md       → Ce fichier
 ```
 
 ---
 
-## Configuration de la CI/CD
+## 🚀 Installation
 
-*Qu'est-ce que le "CI/CD" ?*
+1. Copier le dossier `portfolio-test/` dans la racine Apache :
+   - **WAMP** : `C:/wamp64/www/`
+   - **XAMPP** : `C:/xampp/htdocs/`
+   - **Linux** : `/var/www/html/`
 
-Le CI/CD (*Continuous Integration / Continuous Deployment* ou Intégration et Déploiement Continus) est une pratique standard dans le monde professionnel (DevOps/SRE). Concrètement, cela signifie la fin des transferts de fichiers manuels et risqués via des logiciels FTP (comme FileZilla).
-
-Ici, nous utilisons **GitHub Actions**. Dès que vous effectuez un `git push` sur la branche `main`, un script automatisé (pipeline) s'exécute chez GitHub. Ce pipeline se connecte de façon hautement sécurisée (via clé SSH cryptée) au serveur Linux du lycée, et ordonne au serveur de télécharger uniquement vos nouveaux fichiers. Votre site web est ainsi mis à jour de façon invisible en moins de 10 secondes.
-
-**Configuration requise :**
-
-L'infrastructure étant centralisée, **vous n'avez aucun mot de passe ou adresse IP à configurer**. Les secrets de sécurité sont gérés au niveau de l'organisation GitHub par l'administrateur système.
-
-Pour que la magie opère, vous devez simplement vous assurer que le fichier `.github/workflows/deploy.yml` existe à la racine de votre projet avec le code exact ci-dessous. **Ne modifiez pas ce fichier**, il est calibré pour communiquer avec le pare-feu du serveur.
-
-```yaml
-name: Déploiement du Portfolio
-on:
-  push:
-    branches:
-      - main
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Connexion sécurisée et mise à jour
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: github-deploy-portfolio
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: ${{ github.event.repository.name }}
-```
+2. Accéder via le navigateur :
+   ```
+   http://localhost/portfolio-test/
+   ```
 
 ---
 
-## Informations du dépôt
+## ✅ Ce qui est testé
 
-**Responsable infrastructure :** MEDO Louis - [Email](mailto:louis.medo@loutik.fr)  
-**Mainteneur du dépôt :** <Nom prénom de l'étudiant> - [Email](mailto:email@etudiant.fr)
+| Fichier        | Fonctionnalités testées |
+|---------------|------------------------|
+| `index.php`   | Variables, tableaux, `foreach`, fonctions, `match`, `$_POST`, sessions, `htmlspecialchars`, `filter_input` |
+| `utils.php`   | `$_SESSION`, `$_COOKIE`, `preg_match`, `json_encode/decode`, `file_put_contents`, `file_get_contents`, fonctions chaînes & dates |
+| `upload.php`  | `$_FILES`, `move_uploaded_file`, `is_uploaded_file`, types MIME, sécurité upload |
+| `api.php`     | Headers JSON, routeur `switch`, `http_response_code`, `json_encode`, `file_get_contents('php://input')` |
+| `api_doc.php` | Fetch API JS, testeur interactif |
+| `.htaccess`   | `mod_rewrite`, `mod_headers`, `mod_deflate`, `mod_expires`, sécurité |
+
+---
+
+## 🔧 Prérequis serveur
+
+- **Apache 2.4+** avec `mod_rewrite`, `mod_headers` activés
+- **PHP 8.0+** (utilise `match`, fonctions fléchées `fn()`)
+- Extensions PHP recommandées : `json`, `pdo`, `mbstring`, `gd`, `fileinfo`
+
+---
+
+## 🛡️ Bonnes pratiques appliquées
+
+- `htmlspecialchars()` sur toutes les sorties utilisateur
+- `filter_input()` / `filter_var()` pour la validation
+- `is_uploaded_file()` avant tout traitement de fichier
+- Noms de fichiers sécurisés avec `uniqid()`
+- Sessions démarrées avec `session_start()`
+- Aucune base de données requise
+
+---
+
+*BTS SIO SLAM — Portfolio de test serveur*
