@@ -1,0 +1,17 @@
+name: Déploiement du Portfolio
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    if: github.repository != 'lycee-paul-louis-courier-bts-sio/template_portfolio' # Empêcher le lancement de la CI/CD sur le dépôt template
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connexion SSH et déclenchement du Wrapper
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: github-deploy-portfolio
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: ${{ github.event.repository.name }}
