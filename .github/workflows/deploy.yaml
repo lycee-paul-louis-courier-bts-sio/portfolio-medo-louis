@@ -11,7 +11,7 @@ jobs:
       - name: Connexion SSH et déclenchement du Wrapper
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VPS_HOST }}
+          host: ${{ secrets.VPS_HOST_TEST }}
           username: github-deploy-portfolio
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: ${{ github.event.repository.name }}
