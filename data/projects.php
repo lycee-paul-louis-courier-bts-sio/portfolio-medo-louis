@@ -20,4 +20,10 @@ return [
         'description' => 'Mise en place d\'indicateurs de disponibilite pour surveiller l\'etat de services critiques et accelerer le diagnostic.Test',
         'skills' => ['Supervision', 'Diagnostic', 'Disponibilite', 'Alerting'],
     ],
+    [
+        'title' => 'Ansible pour l\'automatisation de taches',
+        'context' => 'BTS SIO - Projet d\'automatisation',
+        'description' => 'Utilisation d\'Ansible pour automatiser le deploiement de configurations sur plusieurs serveurs, reduisant les erreurs et optimisant les processus de maintenance.',
+        'skills' => ['Ansible', 'Diagnostic', 'Automatisation', 'Infrastructure as Code'],
+    ],
 ];
