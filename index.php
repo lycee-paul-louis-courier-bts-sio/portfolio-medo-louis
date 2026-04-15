@@ -12,7 +12,7 @@ renderHeader($title, 'presentation');
         <h1>Louis MEDO</h1>
         <p class="hero-intro">
             Passionne d'informatique, je me forme aux metiers de l'infrastructure,
-            des systemes et des reseaux avec une approche rigoureuse et orientee solutions.
+            des systemes et des reseaux avec une approche rigoureuse et orientee solutions. Test01
         </p>
         <div class="hero-actions">
             <a class="btn btn-primary" href="projets.php">Voir mes projets</a>
