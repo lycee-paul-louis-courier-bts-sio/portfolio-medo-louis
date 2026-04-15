@@ -17,7 +17,7 @@ return [
     [
         'title' => 'Supervision de services IT',
         'context' => 'Mini-projet de veille et monitoring',
-        'description' => 'Mise en place d\'indicateurs de disponibilite pour surveiller l\'etat de services critiques et accelerer le diagnostic.',
+        'description' => 'Mise en place d\'indicateurs de disponibilite pour surveiller l\'etat de services critiques et accelerer le diagnostic.Test',
         'skills' => ['Supervision', 'Diagnostic', 'Disponibilite', 'Alerting'],
     ],
 ];

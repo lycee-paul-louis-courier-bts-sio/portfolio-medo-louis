@@ -43,7 +43,7 @@ renderHeader($title, 'presentation');
         <article class="card">
             <h2>Objectif professionnel</h2>
             <p>
-                Mettre mes competences techniques au service d'equipes IT pour concevoir,
+                Mettre mes compétences techniques au service d'equipes IT pour concevoir,
                 maintenir et faire evoluer des infrastructures fiables et securisees.
             </p>
         </article>
