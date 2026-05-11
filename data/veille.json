@@ -1,0 +1,12 @@
+[
+    {
+        "titre": "Le Monde informatique",
+        "image": "assets/img/veille-techno-banniere-le_monde_informatique.png",
+        "description": "Veille régulière sur <span class=\"font-bold\">l’actualité technologique</span> et la <span class=\"font-bold\">cybersécurité</span>."
+    },
+    {
+        "titre": "IT Connect",
+        "image": "assets/img/veille-techno-banniere-it_connect.png",
+        "description": "Veille sur <span class=\"font-bold\">l’administration système</span>, les <span class=\"font-bold\">solutions de sécurité</span> et les <span class=\"font-bold\">procédures</span>."
+    }
+]
