@@ -39,7 +39,7 @@ define('CSS_CARD', 'bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-x
 define('CSS_CARD_GRADIENT', 'bg-blue-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1');
 define('CSS_BTN_PRIMARY', 'inline-flex bg-teal-700 text-white px-4 py-3 rounded-lg hover:bg-teal-800 transition');
 define('CSS_IMG_CONTAINER', 'flex justify-center md:justify-start bg-sky-50 overflow-hidden');
-define('CSS_IMG', 'w-full h-64 sm:h-96 md:h-full object-cover hover:scale-105 transition duration-300');
+define('CSS_IMG', 'w-full h-32 sm:h-48 md:h-64 object-contain hover:scale-105 transition duration-300');
 
 // Chargement des données
 $experiences = loadJsonData('experiences.json');
@@ -90,8 +90,8 @@ include __DIR__ . '/includes/header.php';
                     Linux pour des services tels qu'OpenVPN, Docker, Nextcloud, Traefik et de l'hébergement web.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                    <a href="./assets/documents/medo-louis_cv.pdf" target="_blank">
-                        <button class="scroll-btn bg-teal-700 text-white px-6 py-3 rounded-lg hover:bg-teal-800 transition">Curriculum vitæ</button>
+                    <a href="./assets/documents/medo-louis_cv.pdf" target="_blank" class="flex justify-center <?= $css_btn ?> mt-auto">
+                        <button class="scroll-btn bg-teal-700 text-white px-6 py-3 rounded-lg hover:bg-teal-800 transition">Curriculum vitæ
                     </a>
                 </div>
             </div>
