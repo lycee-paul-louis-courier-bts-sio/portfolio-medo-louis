@@ -91,5 +91,5 @@ jobs:
 
 ## Informations du dépôt
 
-**Responsable infrastructure :** MEDO Louis - [Email](mailto:louis.medo@loutik.fr)  
-**Mainteneur du dépôt :** <Nom prénom de l'étudiant> - [Email](mailto:email@etudiant.fr)
+**Responsable infrastructure :** MEDO Louis - [louis.medo@loutik.fr](mailto:louis.medo@loutik.fr)  
+**Mainteneur du dépôt :** MEDO Louis - [louis.medo@loutik.fr](mailto:louis.medo@loutik.fr)
