@@ -153,22 +153,22 @@ include __DIR__ . '/includes/header.php';
                 
                 <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 mb-6 sm:mb-8">
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-3 mt-1 flex-shrink-0">•</span>
+                        <span class="text-blue-600 mr-3 mt-1 shrink-0">•</span>
                         <span>Former des professionnels polyvalents en informatique, capables d'intervenir sur les 
                         infrastructures, les réseaux, et les systèmes d'information.</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-3 mt-1 flex-shrink-0">•</span>
+                        <span class="text-blue-600 mr-3 mt-1 shrink-0">•</span>
                         <span>Développer des compétences techniques en programmation, administration système, 
                         cybersécurité, et gestion de bases de données.</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-3 mt-1 flex-shrink-0">•</span>
+                        <span class="text-blue-600 mr-3 mt-1 shrink-0">•</span>
                         <span>Préparer à la gestion de projets informatiques en intégrant des méthodes agiles et 
                         des bonnes pratiques de travail collaboratif.</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="text-blue-600 mr-3 mt-1 flex-shrink-0">•</span>
+                        <span class="text-blue-600 mr-3 mt-1 shrink-0">•</span>
                         <span>Faciliter l'insertion professionnelle ou la poursuite d'études (licences, écoles 
                         d'ingénieurs) grâce à une formation équilibrée entre théorie et pratique (stages, projets concrets).</span>
                     </li>
