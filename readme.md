@@ -46,6 +46,14 @@ git push origin main
 
 ---
 
+5. **Génération de Tailwind CSS dans la branche `Dev`.**
+
+```
+npx @tailwindcss/cli -i ./assets/css/input.css -o ./assets/css/output.css --minify
+```
+
+---
+
 ## Configuration de la CI/CD
 
 *Qu'est-ce que le "CI/CD" ?*

@@ -1,6 +1,4 @@
 <?php
-// === CONFIGURATION & FONCTIONS UTILITAIRES ===
-
 // Fonction pour charger et valider les données JSON
 function loadJsonData($filename) {
     $filepath = __DIR__ . '/data/' . $filename;
@@ -443,32 +441,58 @@ include __DIR__ . '/includes/header.php';
     <!-- Veille Technologique Section -->
     <section id="veille" class="<?= CSS_SECTION_BG_GRADIENT ?>">
         <div class="<?= CSS_CONTAINER ?>">
-            <h2 class="<?= CSS_TITLE ?>">Veille Technologique</h2>
+            <h2 class="<?= CSS_TITLE ?>">Veille technologique</h2>
+
+            <div class="flex flex-col items-center gap-6 sm:gap-8 max-w-2xl mx-auto">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                <?php if (empty($veilles)): ?>
-                    <p class="col-span-full text-center text-gray-600">Aucun article de veille disponible.</p>
-                <?php else: ?>
-                    <?php foreach ($veilles as $item): ?>
-                        <div class="<?= CSS_CARD ?>">
-                            <div class="<?= CSS_IMG_CONTAINER ?>">
-                                <img src="<?= e($item['image'] ?? '') ?>" 
-                                     alt="<?= e($item['titre'] ?? '') ?>" 
-                                     class="<?= CSS_IMG ?>"
-                                     loading="lazy">
-                            </div>
-                            
-                            <div class="p-4 sm:p-6">
-                                <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 pb-3 border-b-2 border-gray-800 line-clamp-2">
-                                    <?= e($item['titre'] ?? '') ?>
-                                </h3>
-                                <p class="text-xs sm:text-sm text-gray-700 leading-relaxed line-clamp-4">
-                                    <?= eHtml($item['description'] ?? '') ?>
-                                </p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                <h3 class="italic text-lg font-semibold text-gray-700 mb-4">L'Intelligence Artificielle dans les opérations d'infrastructures</h3>
+
+                <div class="w-full <?= CSS_CARD ?> p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+                        <span class="text-blue-600 mr-2">📥</span> 1. Sources d'information
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <?php foreach ($veilles as $source): ?>
+                            <a href="<?= e($source['lien'] ?? '') ?>" target="_blank" rel="noopener noreferrer" class="border border-gray-200 px-4 py-2 rounded-lg shadow-sm text-sm font-medium bg-gray-100 hover:bg-blue-50 transition">
+                                    <?= e($source['titre'] ?? '') ?> 
+                                    <?php if (!empty($source['type'])): ?>
+                                        <span class="text-xs text-gray-500">(<?= e($source['type']) ?>)</span>
+                                    <?php endif; ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div class="flex justify-center text-blue-600">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
+                <div class="w-full <?= CSS_CARD ?> p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 flex items-center justify-center">
+                        <span class="text-amber-500 mr-2">📡</span> 2. Extraction & agrégation
+                    </h3>
+                    <p class="text-gray-600 text-sm sm:text-base">
+                        Récupération centralisée des flux RSS des sources listées.
+                    </p>
+                </div>
+
+                <div class="flex justify-center text-blue-600">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
+                <div class="w-full <?= CSS_CARD ?> p-6 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 flex items-center justify-center">
+                        <span class="text-teal-700 mr-2">⚙️</span> 3. Traitement N8N & publication
+                    </h3>
+                    <p class="text-gray-700 text-sm sm:text-base mb-6 leading-relaxed">
+                        Les données brutes sont récupérées puis synthétisées par une intelligence artificielle via un workflow d'automatisation N8N. Le résultat est publié automatiquement.
+                    </p>
+                    
+                    <a href="/en-cours.php" target="_blank" rel="noopener noreferrer" class="<?= CSS_BTN_PRIMARY ?>">
+                        Voir mes synthèses
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
