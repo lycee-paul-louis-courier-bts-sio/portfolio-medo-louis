@@ -1,4 +1,4 @@
-# Portfolio - \<NOM Prenom\>
+# Portfolio - MEDO Louis
 
 ![Bannière BTS SIO](https://firetoak.github.io/bts-sio_hebergement-portfolio-slam/assets/banniere_bts-sio.png)
 
@@ -20,7 +20,7 @@ Ce dépôt Git possède un double rôle fondamental dans une approche d'ingénie
 1.  **Cloner le dépôt sur votre machine locale.** Récupérez le code source pour commencer à travailler sur votre ordinateur.
 
 ```bash
-git clone https://github.com/lycee-paul-louis-courier-bts-sio/portfolio-<nom-prenom>.git
+git clone https://github.com/lycee-paul-louis-courier-bts-sio/portfolio-medo-louis.git
 ```
 
 2.  **Créer une branche de développement.** Il est déconseillé de travailler directement sur la branche de production. Créez une branche isolée pour vos tests.
